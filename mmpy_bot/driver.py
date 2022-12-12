@@ -153,6 +153,8 @@ class Driver(mattermostautodriver.Driver):
         )
 
         return self.create_post(**reply_args)
+    def reply_with_mention(self, message: Message, response: str):
+        self.reply_to(message, "@" + message.sender_name + "\n" + response)
 
     def direct_message(
         self,
