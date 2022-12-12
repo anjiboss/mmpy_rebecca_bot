@@ -2,7 +2,7 @@
 import os
 from dotenv import load_dotenv
 from mmpy_bot import Bot, Settings
-from rebecca_plugin.rebecca import MyPlugin  # <== Example of importing your own plugin, don't forget to add it to the plugins list.
+from rebecca_plugin.rebecca import Rebecca  # <== Example of importing your own plugin, don't forget to add it to the plugins list.
 
 load_dotenv()
 
@@ -19,7 +19,7 @@ bot = Bot(
         BOT_TEAM = BOT_TEAM,
         SSL_VERIFY = True,
     ),
-    plugins=[MyPlugin()],
+    plugins=[Rebecca()],
 )
 print(os.getenv("TEST"))
 bot.run()
