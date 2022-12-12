@@ -11,9 +11,7 @@ class Rebecca(Plugin):
 
     @listen_to('timer', needs_mention=True)
     def timer(self, message: Message):
-        id = randint(1, 20)
         secs = utils.get_sec(message.text, 'timer')
-        print(id, secs)
-        self.driver.reply_to(message, "Got it sir\n"+ "id: " + str(id))
+        self.driver.reply_with_mention(message, "Got it sir")
         time.sleep(secs)
-        self.driver.reply_to(message, "Time up, sir. "+ "\nid: " + str(id))
+        self.driver.reply_with_mention(message, "Time up, sir. ")
